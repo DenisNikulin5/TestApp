@@ -51,25 +51,32 @@ public class MainTest {
         MobileElement resetButton = driver.findElementById("com.example.testapp:id/reset_button");
         MobileElement alertCheckbox = driver.findElementById("com.example.testapp:id/alert_checkbox");
 
+        //sending the text to the addition activity.
         editText.sendKeys(testMessage);
         sendButton.click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.label("Send text");
 
+        //get the text from addition activity
         MobileElement textView = driver.findElementById("com.example.testapp:id/textView");
         Assert.assertEquals(testMessage, textView.getText());
         
+        //return to the main activity
         ((AndroidDriver<MobileElement>) MainTest.driver).pressKey(new KeyEvent(AndroidKey.BACK));
+
+        //sending the text as alert message.
         editText.sendKeys(testMessage);
         alertCheckbox.click();
         sendButton.click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.label("Send text as alert");
 
+        //get the text form alert window and close it
         String message = driver.findElementById("android:id/message").getText();
         driver.findElementById("android:id/button3").click();
         Assert.assertEquals(testMessage, message);
 
+        //reset controls
         resetButton.click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.label("Reset elements");
