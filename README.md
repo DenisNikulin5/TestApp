@@ -30,6 +30,7 @@ where  _APP_ID_, _DEVICE_SET_ID_ and _PATH_TO_FILE.apk_ must be replaced with re
 You may get  _APP_ID_ and _DEVICE_SET_ID_ values from appcenter if you go to appcenter in Test section and click 'New test run'. You should select  necessary devises there and select 'Appium' as test framework. You will see description like this:
 ![image](https://user-images.githubusercontent.com/56116604/95076182-1fdc2f80-071a-11eb-92e9-1967dae49ccf.png)
 
+- Wait for completion. It may take a few minutes.
 - If you do all correctly, you will see result of the tests in appcenter in Test section:
 
 ![image](https://user-images.githubusercontent.com/56116604/95076815-215a2780-071b-11eb-9988-a4e86cfcf030.png)
